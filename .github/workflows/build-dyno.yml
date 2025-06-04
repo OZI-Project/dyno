@@ -18,7 +18,9 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - id: branch-name
         run: echo "value=$(ozi -v)" >> $GITHUB_OUTPUT
-      - run: git checkout -b "$BRANCH_NAME"
+      - run: | 
+          git checkout -b "$BRANCH_NAME"
+          git fetch
         env:
           BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
       - run: |
