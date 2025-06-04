@@ -29,6 +29,8 @@ jobs:
           -l "MIT" \
           --license-expression "MIT0" \
           -s "OZI Github actions test dyno" \
-      - run: git push -u origin "$BRANCH_NAME"
+      - run: |
+          git commit -m "OZI $BRANCH_NAME"
+          git push -u origin "$BRANCH_NAME"
         env:
           BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
