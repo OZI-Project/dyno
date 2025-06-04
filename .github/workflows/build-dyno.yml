@@ -22,7 +22,10 @@ jobs:
         env:
           BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
       - run: |
-          ozi-new -n dyno \
-          -a "OZI Project" -e "help@oziproject.dev" \
-          -l "MIT" --license-expression "MIT0" \
+          ozi-new project \
+          -n dyno \
+          -a "OZI Project" \
+          -e "help@oziproject.dev" \
+          -l "MIT" \
+          --license-expression "MIT0" \
           -s "OZI Github actions test dyno" \
