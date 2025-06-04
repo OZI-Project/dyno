@@ -1,11 +1,12 @@
-# GitHub Repository Template
+# dyno tests for OZI actions
 
-This should serve as the skeleton for most of the repos in the OZI Project.
+🚧 Work in Progress 🚧
+
+Roughly the plan:
+1. 🔧 use OZI to re-render a whole dummy project on every push to the default branch
+2. 🔨 trigger ozi.yml workflow on release branches corresponding to the current OZI release ``major.minor`` version
+3. 📦 publish dyno to TestPyPI
 
 ## License
 
-Please choose an OSI-approved license.
-
-## CodeQL
-
-You should set up your own CodeQL worfkflow if necessary.
+MIT No Attribution
