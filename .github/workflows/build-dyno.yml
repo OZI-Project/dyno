@@ -30,6 +30,8 @@ jobs:
           --license-expression "MIT0" \
           -s "OZI Github actions test dyno" \
       - run: |
+          git config --global user.email "help@oziproject.dev"
+          git config --global user.name "OZI Project"
           git commit -m "OZI $BRANCH_NAME"
           git push -u origin "$BRANCH_NAME"
         env:
