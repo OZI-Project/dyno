@@ -32,6 +32,7 @@ jobs:
       - run: |
           git config --global user.email "help@oziproject.dev"
           git config --global user.name "OZI Project"
+          git add -A
           git commit -m "OZI $BRANCH_NAME"
           git push -u origin "$BRANCH_NAME"
         env:
