@@ -22,7 +22,6 @@ jobs:
         run: echo "value=$(ozi -v)" >> $GITHUB_OUTPUT
       - run: |
           git checkout -b "$BRANCH_NAME"
-          git push --set-upstream origin "$BRANCH_NAME"
         env:
           BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
       - run: |
