@@ -21,7 +21,7 @@ jobs:
       - run: | 
           git checkout -b "$BRANCH_NAME"
           git remote set-url origin https://${{ secrets.WORKFLOW_TOKEN }}@github.com/OZI-Project/dyno
-          git fetch
+          git push
         env:
           BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
       - run: |
