@@ -35,6 +35,7 @@ jobs:
           -l "MIT" \
           --license-expression "MIT0" \
           -s "OZI Github actions test dyno" \
+          --allow-file templates,.git,.pre-commit-config.yaml,.github,README.md,requirements.txt
       - run: |
           git config --global user.email "help@oziproject.dev"
           git config --global user.name "OZI Project"
