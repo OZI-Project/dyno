@@ -45,8 +45,8 @@ jobs:
       - id: add-test-dyno
         run: |
           ozi-fix test --add test_dyno.py
-          echo "value='$(ozi-fix test --add test_dyno.py)'" >> $GITHUB_OUTPUT
-      - run: meson rewrite command "${{ steps.add-test-dyno.value }}"
+          echo "value=$(ozi-fix test --add test_dyno.py)" >> $GITHUB_OUTPUT
+      - run: meson rewrite command "${{ steps.add-test-dyno.outputs.value }}"
       - run: |
           git config --global user.email "help@oziproject.dev"
           git config --global user.name "OZI Project"
