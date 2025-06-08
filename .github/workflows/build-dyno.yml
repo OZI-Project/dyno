@@ -43,7 +43,9 @@ jobs:
           --allow-file requirements.txt \
           --update-wrapfile
       - id: add-test-dyno
-        run: echo "value='$(ozi-fix test --add test_dyno.py)'" >> $GITHUB_OUTPUT
+        run: |
+          ozi-fix test --add test_dyno.py
+          echo "value='$(ozi-fix test --add test_dyno.py)'" >> $GITHUB_OUTPUT
       - run: meson rewrite command "${{ steps.add-test-dyno.value }}"
       - run: |
           git config --global user.email "help@oziproject.dev"
