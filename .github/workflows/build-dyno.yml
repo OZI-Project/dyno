@@ -28,6 +28,7 @@ jobs:
           BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
       - run: |
           ozi-new project \
+          --testpypi \
           -n dyno \
           -a "OZI Project" \
           -e "help@oziproject.dev" \
