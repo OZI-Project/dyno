@@ -33,7 +33,7 @@ jobs:
           -a "OZI Project" \
           -e "help@oziproject.dev" \
           -l "MIT" \
-          --license-expression "MIT0" \
+          --license-expression "MIT-0" \
           -s "OZI Github actions test dyno" \
           --allow-file templates \
           --allow-file .git \
