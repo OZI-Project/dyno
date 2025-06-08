@@ -1,0 +1,9 @@
+[wrap-file]
+directory = OZI-2.0.16
+source_url = https://github.com/OZI-Project/OZI/archive/refs/tags/2.0.16.tar.gz
+source_hash = 39b4ca76d84401adff956fd71a224497fde60b1829a3a99e850d95a5d0b97ac9
+source_filename = OZI-2.0.16.tar.gz
+
+[provide]
+dependency_names = ozi, ozi-2.0.16
+
