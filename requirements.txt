@@ -284,9 +284,9 @@ markupsafe==3.0.2 \
     --hash=sha256:f8b3d067f2e40fe93e1ccdd6b2e1d16c43140e76f02fb1319a05cf2b79d99430 \
     --hash=sha256:fcabf5ff6eea076f859677f5f0b6b5c1a51e70a376b0579e0eadef8db48c6b50
     # via jinja2
-meson[ninja]==1.6.1 \
-    --hash=sha256:1eca49eb6c26d58bbee67fd3337d8ef557c0804e30a6d16bfdf269db997464de \
-    --hash=sha256:3f41f6b03df56bb76836cc33c94e1a404c3584d48b3259540794a60a21fad1f9
+meson[ninja]==1.8.1 \
+    --hash=sha256:374bbf71247e629475fc10b0bd2ef66fc418c2d8f4890572f74de0f97d0d42da \
+    --hash=sha256:b4e3b80e8fa633555abf447a95a700aba1585419467b2710d5e5bf88df0a7011
     # via ozi-core
 ninja==1.11.1.4 \
     --hash=sha256:055f386fb550c2c9d6157e45e20a84d29c47968876b9c5794ae2aec46f952306 \
