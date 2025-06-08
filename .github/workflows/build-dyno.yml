@@ -40,7 +40,8 @@ jobs:
           --allow-file .pre-commit-config.yaml \
           --allow-file .github \
           --allow-file README.md \
-          --allow-file requirements.txt
+          --allow-file requirements.txt \
+          --update-wrapfile
       - run: |
           git config --global user.email "help@oziproject.dev"
           git config --global user.name "OZI Project"
