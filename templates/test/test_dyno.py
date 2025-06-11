@@ -1,6 +1,6 @@
 import pytest
 
 
-@pytest.mark.skip()
+@pytest.mark.skip
 def test_dyno() -> None:
     pass
