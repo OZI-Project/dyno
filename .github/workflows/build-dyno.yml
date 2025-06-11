@@ -44,13 +44,19 @@ jobs:
           --update-wrapfile
       - id: add-test-dyno
         run: echo "value=$(ozi-fix test --add test_dyno.py)" >> $GITHUB_OUTPUT
-      - run: black -S .
-      - run: meson rewrite command '${{ steps.add-test-dyno.outputs.value }}'
       - run: |
           echo '### ``ozi-fix test --add test_dyno.py``' >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           echo '${{ steps.add-test-dyno.outputs.value }}' >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
+      - run: |
+          echo '### ``black --diff -S .``' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          black --diff -S . >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+      - run: black -S .
+      - run: meson rewrite command '${{ steps.add-test-dyno.outputs.value }}'
+      - run: |
           git config --global user.email "help@oziproject.dev"
           git config --global user.name "OZI Project"
           git add -A
