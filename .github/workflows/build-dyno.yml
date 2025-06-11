@@ -49,7 +49,7 @@ jobs:
       - run: |
           echo '### ``ozi-fix test --add test_dyno.py``' >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
-          echo $BRANCH_NAME >> $GITHUB_STEP_SUMMARY
+          echo ${{ steps.add-test-dyno.outputs.value }} >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           git config --global user.email "help@oziproject.dev"
           git config --global user.name "OZI Project"
