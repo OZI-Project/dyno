@@ -627,9 +627,9 @@ types-pyyaml==6.0.12.20250516 \
     --hash=sha256:8478208feaeb53a34cb5d970c56a7cd76b72659442e733e268a94dc72b2d0530 \
     --hash=sha256:9f21a70216fc0fa1b216a8176db5f9e0af6eb35d2f2932acb87689d03a5bf6ba
     # via ozi-core
-urllib3-future==2.12.922 \
-    --hash=sha256:4cb9424398993016383b600ba20881217f10a99c45acac60019ffb0dd007bc8a \
-    --hash=sha256:5127b8cec47bd165084de1991801c8746bda8889ec919e108fcd777f6fdadaa8
+urllib3-future==2.13.900 \
+    --hash=sha256:1d897573a7aeec55654abb7d8f1ffc3d7017d6d49ab5d74fbc3548ed1078e0ed \
+    --hash=sha256:71e27a10449848afba45d15fb7ebc1286c4086ed79a0229725413408d2e220c0
     # via niquests
 wassima==1.2.2 \
     --hash=sha256:10508102696d5e2cf4df6942a8ae251c136a49dc32591e9c3f7dd007f5ea1c2f \
