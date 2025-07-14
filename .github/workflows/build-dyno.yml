@@ -54,6 +54,7 @@ jobs:
           echo '```' >> $GITHUB_STEP_SUMMARY
           black --diff -S . >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
+      - run: ozi-fix missing --update-wrapfile
       - run: black -S .
       - run: meson rewrite command '${{ steps.add-test-dyno.outputs.value }}'
       - run: |
