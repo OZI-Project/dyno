@@ -22,7 +22,7 @@ jobs:
 
 {% include '.github/workflows/draft.yml.j2' %}
 
-{% include '.github/workflows/release.yml.j2' %}
+{% include 'templates/.github/workflows/release.yml.j2' %}
 
 {% include '.github/workflows/provenance.yml.j2' %}
 
