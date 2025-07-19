@@ -595,9 +595,9 @@ qh3==1.5.3 \
     --hash=sha256:fc5e3d150dbfbe835a00a84ed16d2a4a204ec2c466574abf3dcd9825b71e4b3d \
     --hash=sha256:feb042f732fdaea87f9dccbf2f13c2ad36952acafab6a25d0f9805dde12f8e40
     # via urllib3-future
-reverse-argparse==2.0.6 \
-    --hash=sha256:b6751300e99c796edd61ece2264c0965aee9c3caf96e47472e376286bc2283ec \
-    --hash=sha256:c76c59d0cbc1c9e69f5686d36334f6b47ccc7259ad10b11b0585244d7ccc51f6
+reverse-argparse==2.0.9 \
+    --hash=sha256:1140064b00d6e5abad698e5d1673fe1541a023f22ffb0546e226b0814dd8f76f \
+    --hash=sha256:cdb6786b0d09766b2f3ae047b685e0b2cd0d5335cb063e9d7c2b4fb103657507
     # via ozi-core
 setuptools-scm[toml]==8.3.1 \
     --hash=sha256:332ca0d43791b818b841213e76b1971b7711a960761c5bea5fc5cdb5196fbce3 \
