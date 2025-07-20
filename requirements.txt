@@ -395,11 +395,11 @@ niquests==3.14.1 \
     # via
     #   ozi-core
     #   ozi-templates
-ozi==2.1.9 \
-    --hash=sha256:85b521cd3052902ee96eac6c5ca35d02cab5a35c9b3d63a957278c1f72f0bf19 \
-    --hash=sha256:9251e7a82d157d384db9416b543ed18c9763d6e4fe8900578d7e29da605003d6 \
-    --hash=sha256:efbaf50d16ed0fdae71d1c591c1698afa60eca9b8903ca3ffdb13c7c687059b5 \
-    --hash=sha256:fd10d8b1b756bed48206fb6f9ffc69ee8fc17957ecad995b9c74b82a4ffd0f35
+ozi==2.1.10 \
+    --hash=sha256:43e1ddb429cfd7a785a5cea517c118aa7dbc4f39c37a77b97b2b9c8d267a2fcc \
+    --hash=sha256:ab2cb06bd42a17f534d28beae8a16d8443460fc2e8ffd0a1e901a03b92b352f9 \
+    --hash=sha256:e06bde1a8c4954ae251bbfa9357dce4a81de666e730900e46d34c618a09f453d \
+    --hash=sha256:f27a96f9036a43f74da4a0b312bdcbd21e1bd4cfe1d264b8a47c529ac0191034
     # via -r requirements.in
 ozi-core==1.21.16 \
     --hash=sha256:0be31861e0b632bf12b8d69d623c66ef38afccdcac9df9dc0ced0dabbaf5d83e \
