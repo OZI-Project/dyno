@@ -1,0 +1,9 @@
+[wrap-file]
+directory = OZI-2.1.11
+source_url = https://github.com/OZI-Project/OZI/archive/refs/tags/2.1.11.tar.gz
+source_hash = 71a08f291a8036aa04f1f618d4d35b01d8e3150fbf4e73c450a3c90b95d8bd43
+source_filename = OZI-2.1.11.tar.gz
+
+[provide]
+dependency_names = ozi, ozi-2.1.11
+
