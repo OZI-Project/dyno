@@ -41,6 +41,7 @@ jobs:
           --allow-file .github \
           --allow-file README.md \
           --allow-file requirements.txt \
+          --no-enable-create-pull-request \
           --update-wrapfile
       - id: add-test-dyno
         run: echo "value=$(ozi-fix test --add test_dyno.py)" >> $GITHUB_OUTPUT
