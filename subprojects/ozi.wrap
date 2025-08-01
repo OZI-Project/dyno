@@ -1,0 +1,9 @@
+[wrap-file]
+directory = OZI-2.1.13
+source_url = https://github.com/OZI-Project/OZI/archive/refs/tags/2.1.13.tar.gz
+source_hash = 65ccc463a693b579a5bd00a8522b11f055f9755356f313a3150069c071eeb07c
+source_filename = OZI-2.1.13.tar.gz
+
+[provide]
+dependency_names = ozi, ozi-2.1.13
+

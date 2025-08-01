@@ -1,0 +1,129 @@
+
+# Part of dyno.
+# See LICENSE.txt in the project root for details.
+name: OZI
+
+on:
+  push:
+    branches:
+      - "v?[0-9].[0-9]*"
+      - "v?[1-9]+[0-9].[0-9]*"
+
+permissions:
+  contents: read
+
+jobs:
+
+
+  checkpoint-cp311-ubuntu-latest:
+    name: checkpoint (Python 3.11 on ubuntu-latest)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    permissions:
+        id-token: write
+    steps:
+      - uses: OZI-Project/checkpoint@e6919d1fe476e76ce08cb6e85f847d0bf6dd8b6e
+        with:
+          python-version: "3.11"
+  checkpoint-cp312-ubuntu-latest:
+    name: checkpoint (Python 3.12 on ubuntu-latest)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    permissions:
+        id-token: write
+    steps:
+      - uses: OZI-Project/checkpoint@e6919d1fe476e76ce08cb6e85f847d0bf6dd8b6e
+        with:
+          python-version: "3.12"
+  checkpoint-cp313-ubuntu-latest:
+    name: checkpoint (Python 3.13 on ubuntu-latest)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    permissions:
+        id-token: write
+    steps:
+      - uses: OZI-Project/checkpoint@e6919d1fe476e76ce08cb6e85f847d0bf6dd8b6e
+        with:
+          python-version: "3.13"
+
+  checkpoint:
+    runs-on: ubuntu-latest
+    needs: [checkpoint-cp311-ubuntu-latest,checkpoint-cp312-ubuntu-latest,checkpoint-cp313-ubuntu-latest,]
+    steps:
+      - run: echo "checkpoint success"
+
+
+  draft:
+    needs: checkpoint
+    runs-on: ubuntu-latest
+    concurrency: draft
+    strategy:
+      fail-fast: true
+    permissions:
+      contents: write
+      id-token: write
+    outputs:
+      drafted: ${{ steps.draft.outputs.drafted }}
+      tag: ${{ steps.draft.outputs.tag }}
+    steps:
+      - uses: OZI-Project/draft@7ce5c1150603d27957375d1c85570faa29ab5fd5
+        id: draft
+
+
+  release:
+    needs: [draft, checkpoint]
+    runs-on: ubuntu-latest
+    concurrency: release
+    strategy:
+      matrix:
+        py:
+          - security2
+          - security1
+          - bugfix
+          - prerelease
+      fail-fast: true
+      max-parallel: 1
+    outputs:
+      hashes: ${{ steps.release.outputs.hashes }}
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: OZI-Project/release@d3920f3f0471dec9369a2245cc6e6b42756d27f8
+        id: release
+        with:
+          python-dist: ${{ matrix.py }}
+          tag: ${{ needs.draft.outputs.tag }}
+
+
+  provenance:
+    needs: [draft, release]
+    runs-on: ubuntu-latest
+    name: Generate build provenance
+    if: needs.draft.outputs.drafted == 'true'
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    steps:
+    - uses: OZI-Project/provenance@a7369a6ef4a56f442b97615539b8de23dcb1e94e
+      with:
+        release-tag: ${{ needs.draft.outputs.tag }}
+
+
+  publish:
+    runs-on: ubuntu-latest
+    needs: [draft, release, provenance]
+    if: needs.draft.outputs.drafted == 'true'
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+    - uses: OZI-Project/publish@9df2afca0ca23d527508e76a8deef37330bd90bb
+    - name: Publish package distributions to PyPI
+      uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc
+      with:
+        repository-url: "https://test.pypi.org/legacy/"
