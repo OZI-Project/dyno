@@ -1,7 +1,14 @@
 on:
   push:
     branches: main
+    paths:
+      - 'requirements.txt'
+      - 'templates/**'
   workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   update-dyno-files:
