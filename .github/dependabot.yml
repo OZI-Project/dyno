@@ -12,8 +12,8 @@ updates:
     open-pull-requests-limit: 15
     groups:
       ozi:
-        patterns: 
-          - '*'
+        exclude-patterns:
+          - 'exclude-patterns'
     commit-message:
       prefix: "build(ozi):"
 
