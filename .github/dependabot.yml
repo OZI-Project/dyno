@@ -13,7 +13,7 @@ updates:
     groups:
       ozi:
         exclude-patterns:
-          - 'exclude-patterns'
+          - 'wassima'
     commit-message:
       prefix: "build(ozi):"
 
