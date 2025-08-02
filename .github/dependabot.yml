@@ -13,7 +13,7 @@ updates:
     groups:
       ozi:
         patterns: 
-          - ozi*
+          - *
     commit-message:
       prefix: "build(ozi):"
 
