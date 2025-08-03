@@ -70,6 +70,12 @@ jobs:
           git config --global user.name "OZI Project"
           git add -A
           git commit -m "OZI $BRANCH_NAME"
-          git push -u origin "$BRANCH_NAME"
+        env:
+          BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
+      - run: git pull "$BRANCH_NAME"
+        continue-on-error: true
+        env:
+          BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
+      - run: git push -u origin "$BRANCH_NAME"
         env:
           BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
