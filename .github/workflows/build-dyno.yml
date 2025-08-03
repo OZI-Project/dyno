@@ -68,7 +68,7 @@ jobs:
       - run: |
           git config --global user.email "help@oziproject.dev"
           git config --global user.name "OZI Project"
-          git config pull.rebase false
+          git config pull.rebase true
           git add -A
           git commit -m "OZI $BRANCH_NAME"
         env:
