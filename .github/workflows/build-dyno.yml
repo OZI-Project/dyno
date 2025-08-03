@@ -72,7 +72,7 @@ jobs:
           git commit -m "OZI $BRANCH_NAME"
         env:
           BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
-      - run: git pull
+      - run: git pull origin "$BRANCH_NAME"
         continue-on-error: true
         env:
           BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
