@@ -73,7 +73,7 @@ jobs:
           git commit -m "OZI $BRANCH_NAME"
         env:
           BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
-      - run: git pull origin "$BRANCH_NAME"
+      - run: git pull origin "$BRANCH_NAME" --allow-unrelated-histories
         continue-on-error: true
         env:
           BRANCH_NAME: ${{ steps.branch-name.outputs.value }}
