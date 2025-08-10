@@ -3,9 +3,8 @@
 🚧 Work in Progress 🚧
 
 Roughly the plan:
-1. 🔧 use OZI to re-render a whole dummy project on every push to the default branch
-2. 🔨 trigger ozi.yml workflow on release branches corresponding to the current OZI release ``major.minor`` version
-3. 📦 publish dyno to TestPyPI
+1. 🔧 use OZI to render a whole dummy project and push to a ``major.minor.patch`` branch
+2. 🔨 trigger ozi.yml workflow on ``release`` branch after pushing from the current ``major.minor.patch`` branch
 
 ## License
 
