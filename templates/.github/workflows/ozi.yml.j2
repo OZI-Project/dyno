@@ -1,0 +1,24 @@
+{%- for line in project.copyright_head.split('\n') %}
+{{ '# ' ~ line }}
+{%- endfor %}
+name: OZI
+
+on:
+  push:
+    branches:
+      - "release"
+
+permissions:
+  contents: read
+
+jobs:
+
+{% include '.github/workflows/checkpoint.yml.j2' %}
+
+{% include '.github/workflows/draft.yml.j2' %}
+
+{% include '.github/workflows/release.yml.j2' %}
+
+{% include '.github/workflows/provenance.yml.j2' %}
+
+{% include '.github/workflows/publish.yml.j2' %}
