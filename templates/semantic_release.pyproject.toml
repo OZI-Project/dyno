@@ -3,8 +3,8 @@ commit_parser                  = "{{ spec.python.pkg.version.semantic }}"
 major_on_zero                  = false
 tag_format                     = "{{ spec.python.src.format.version_placeholder }}"
 
-[tool.semantic_release.branches."x.x"]
-match = "\\A\\d+\\.\\d+\\.\\d+[a-zA-Z0-9\\-]*\\Z"
+[tool.semantic_release.branches."release"]
+match = "release"
 prerelease_token = "alpha"
 prerelease = false
 
